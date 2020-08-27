@@ -1,0 +1,13 @@
+{
+  "name": "hello_world",
+  "version": "1.0.0",
+  "description": "First Hello World App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "custom_name":"dir"
+  },
+  "author": "Christon Cardoza",
+  "license": "ISC"
+}
