@@ -27,6 +27,6 @@ NPM - Node Package Manager:
 	1. Install 3rd party packages (Frameworks, Libraries, Tools)
 	2. Package get stored in "node_modules" folder
 	3. All dependencies are listed on "package.json" file
-
+   
 
 	

@@ -2,9 +2,10 @@
   "name": "node_crash_course",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/http_demo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./http_demo.js",
+    "dev": "nodemon ./http_demo.js"
   },
   "author": "Christon Cardoza",
   "license": "ISC",

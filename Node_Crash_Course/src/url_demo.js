@@ -27,5 +27,3 @@ console.log("Addomg param to url is : ",myUrl.searchParams);
 //Loop through the param
 console.log("Looping through the param object: ");
 myUrl.searchParams.forEach((value,name) => console.log(`${name} : ${value}`));
-
-// https://www.youtube.com/watch?v=fBNz5xF-Kx4&list=PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu
