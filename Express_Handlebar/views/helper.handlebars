@@ -1,0 +1,47 @@
+<h3>IF and ELSE </h3>
+{{#if isName}}
+
+    <p> My Name is : {{name}}</p>
+
+    {{else}}
+
+    <p> You can't acces the name</p>
+
+{{/if}}
+
+<hr/>
+<hr/>
+
+<h3> UNLESS </h3>
+{{#unless isage}}
+
+    <p> Your age is not defined </p>
+
+{{/unless}}
+
+<hr/>
+<hr/>
+
+<h3>EACH </h3>
+<p> My Roomates are : </p>
+{{#each roomates}}
+
+    <p>{{this}} </p>
+
+{{/each}}
+
+<p>Thier Details : </p>
+{{#each  details as |dv dk|}}
+
+    <p> : {{dk}} :  </p>
+
+    {{#each  dv }}
+
+        {{this}} 
+
+    {{/each}}
+
+    <hr/>
+
+{{/each}}
+
