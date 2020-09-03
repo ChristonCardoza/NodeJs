@@ -1,0 +1,30 @@
+<h1> Welcome to Lookup Page</h1>
+
+<hr/>
+<hr/>
+<hr/>
+
+<h3>Lookup</h3> 
+
+<hr/>
+
+<p>The Roomate name is {{lookup roomates 1}}</p>
+
+<p>Here is {{lookup roomates 1}} Details : {{lookup details 'Rohan'}} </p>
+
+<hr/>
+
+<h3>Custom Helper</h3> 
+
+<hr/>
+
+<p>Single value : {{calculation 50}}</p>
+
+<hr/>
+
+<p>Multi value : {{#listing names}}  
+
+                    {{firstname}} {{lastname}}
+                {{/listing}}
+
+</p>

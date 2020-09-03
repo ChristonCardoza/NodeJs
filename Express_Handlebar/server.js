@@ -6,26 +6,53 @@ const path = require('path');
 const app = express();
 
 
-//  Invoke Handlebars and  Views
-app.engine('handlebars',expbs({
+
+const hbs = expbs.create({
     defaultLayout : 'main',
-    layoutsDir : path.join(__dirname,'views/mainLayout')
-}));
+    layoutsDir : path.join(__dirname,'views/mainLayout'),
+
+
+    //create custom helper
+    helpers:{
+
+        calculation : function(value){
+            return value + 7;
+        },
+
+        listing : function(value, options){
+
+            let out = "<ul>";
+
+            for(let i=0;i < value.length;i++){
+                out = out + "<li>" + options.fn(value[i]) + "</li>";
+            }
+
+            return out + "</ul>"
+
+        }
+    }
+});
+
+
+//  Invoke Handlebars and  Views
+app.engine('handlebars',hbs.engine);
 app.set('view engine', 'handlebars');
+
+// Load Static fikes
+app.use(express.static('public'));
 
 // Basic Routing
 app.get('/',(req, res) => {
 
     res.render('index',{ 
-        layout: false,
         title : 'Homepage',
-        name : 'Christon' });
+        name : 'Christon',
+        style : 'index.css' });
 });
 
 app.get('/about',(req, res) => {
 
     res.render('about', { 
-        layout: false,
         title : 'About',
         surname :'Cardoza'});
 });
@@ -33,7 +60,6 @@ app.get('/about',(req, res) => {
 app.get('/helper',(req, res) => {
 
     res.render('helper', { 
-        layout: false,
         title : 'Helprs',
         name : 'Christon',
         surname :'Cardoza',
@@ -47,6 +73,28 @@ app.get('/helper',(req, res) => {
         }
     })
         
+});
+
+// Lookup
+app.get('/look',(req, res) => {
+
+    res.render('look', { 
+        title : 'Lookup',
+        roomates : ['Christon', 'Rohan', 'Wilfred'],
+        details : {
+            Christon : ['Cardoza',24,'Padukudru'],
+            Rohan : ['D\'Souza',26,'Padukudru'],
+            Wilfred : ['Fernendes',25,'Kambathota']
+        },
+        names :[
+
+           { firstname: 'Christon', lastname : 'Cardoza'},
+           { firstname:'Rohan' ,lastname :'D\'Souza'},
+            {firstname:'Wilfred', lastname :'Fernendes'},
+        ] 
+            
+    
+    });
 });
 
 
