@@ -1,0 +1,22 @@
+{
+  "name": "basic_auth",
+  "version": "1.0.0",
+  "description": "Using hapi/joi and jwt",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "author": "Christon Cardoza",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.3"
+  }
+}
