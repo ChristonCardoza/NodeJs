@@ -2,6 +2,9 @@ const express = require('express');
 const userModel = require('../model/user');
 const { registerValidation ,loginValidation } = require('../model/userValidate');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const user = require('../model/user');
+const verify = require('../model/VerifyToken')
 
 const router = express.Router();
 
@@ -47,7 +50,16 @@ router.post('/login',async(req,res) => {
    const validPassword = await bcrypt.compare(req.body.password, UserExist.password);
    if (!validPassword) return res.status(400).send('Invalid Password');
 
-   res.send("Logged In");
+   // Create and assign token
+   const token = jwt.sign({_id: user.id}, process.env.TOKEN_SECRET); 
+   res.header('auth-token', token).send(token);
+});
+
+router.get('/all',verify,async(req,res) => {
+
+    const Users = await userModel.find();
+    if (!Users) return res.status(500).send('No Users found');
+    res.send(Users);
 });
 
 module.exports = router;
