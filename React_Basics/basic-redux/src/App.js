@@ -6,6 +6,8 @@ import store from './redux/store';
 import HooksCakeContainer from './components/HooksCakeContainer';
 import IceCreamContainer from './components/IceCreamContainer';
 import MultipleCakeContainer from './components/MultipleCakeContainer';
+import ItemContainer from './components/ItemContainer';
+import UserContainer from './components/UserContainer';
 
 function App() {
   return (
@@ -18,6 +20,13 @@ function App() {
         <MultipleCakeContainer />
 
         <IceCreamContainer />
+
+        {/*  Passing Own Property */}
+        <ItemContainer cake/>
+        <ItemContainer />
+
+        {/* Async Action */}
+        <UserContainer />
       </div>
     </Provider>
   );

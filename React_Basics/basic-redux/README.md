@@ -26,6 +26,7 @@
  1. The only way your application can interact with the store
  2. Actions are in 2 type
     * Synchronous :- As soon as an action was dispatched, the state was immediately updated
+    * Ex: if you dispatch the BUY_CAKE action, the numOFCakes was right away decremented by 1. Same with BUY_ICECREAM action as well.
       ```js
          const BUY_CAKE = 'BUY_CAKE'
 
@@ -37,6 +38,7 @@
          }
       ```
     * Asynchronous :- Asynchronous API calls to fetch data from an end point and use that data in your application
+    * Ex: 
       ```js
          const fetchUsers = () => {
             return function(dispatch){
