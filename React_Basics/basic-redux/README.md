@@ -14,6 +14,10 @@
     * In redux, all state transitions are explicit and it is possible to keep track of them
 
 ## Three Principles
+<p align="center">
+  <img src="/img/principles.PNG"> 
+</p>
+
  1. The state of your whole application is stored in an object tree within a single store
     * Maintain our application state in a single object which would be managed by Redux store
  2. The only way to change the state is to emit an action, an object describing what happened
@@ -109,8 +113,20 @@
    ```
 
 ## React + Redux
+<p align="center">
+  <img src="/img/issue_with_React-State.PNG"> 
+</p>
+
  1. In React state will store within the component and if React component A having the field named as name which is required for its sibling B then we have to pass it by it's parent C then it sends to B, similarly component F and G requires the field then this situation is very hectic for react to mange.
+<p align="center">
+  <img src="img/Readux_with_React.PNG"> 
+</p>
+
  2. In order to solve we have to use hooks(useReducer + useContext) or Redux. Redux with store the React state in Redux State Container
+<p align="center">
+  <img src="/img/React-Redux.PNG"> 
+</p>
+
  3. In order to bind the React and Redux with need React-Redux which is the official Redux UI binding library for React
     * Connect
       * The connect() function connects a React component to a Redux store.
@@ -151,7 +167,7 @@
                      mapStateToProps,
                      mapDispatchToProps
                   )(CakeContainer)
-         ```
+            ```
 
     * Provider
       * The `<Provider />` makes the Redux store available to any nested components that have been wrapped in the connect() function.
@@ -185,6 +201,6 @@
         ```
 
 ## Ref
- https://react-redux.js.org/api/provider
- https://react-redux.js.org/api/connect
- https://react-redux.js.org/api/hooks
+ * https://react-redux.js.org/api/provider
+ * https://react-redux.js.org/api/connect
+ * https://react-redux.js.org/api/hooks
