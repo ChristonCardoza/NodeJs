@@ -15,7 +15,7 @@
 
 ## Three Principles
 <p align="center">
-  <img src="/img/principles.PNG"> 
+  <img src="img/principles.PNG"> 
 </p>
 
  1. The state of your whole application is stored in an object tree within a single store
@@ -114,7 +114,7 @@
 
 ## React + Redux
 <p align="center">
-  <img src="/img/issue_with_React-State.PNG"> 
+  <img src="img/issue_with_React-State.PNG"> 
 </p>
 
  1. In React state will store within the component and if React component A having the field named as name which is required for its sibling B then we have to pass it by it's parent C then it sends to B, similarly component F and G requires the field then this situation is very hectic for react to mange.
@@ -124,7 +124,7 @@
 
  2. In order to solve we have to use hooks(useReducer + useContext) or Redux. Redux with store the React state in Redux State Container
 <p align="center">
-  <img src="/img/React-Redux.PNG"> 
+  <img src="img/React-Redux.PNG"> 
 </p>
 
  3. In order to bind the React and Redux with need React-Redux which is the official Redux UI binding library for React
