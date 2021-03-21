@@ -4,6 +4,7 @@
   <p align="center">
       <img src="img/icon.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React from 'react'
@@ -32,13 +33,13 @@ function App() {
 }
 
 export default App;
-
 ```
 
 ## Toasts
   <p align="center">
       <img src="img/toast.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React from 'react'
@@ -98,12 +99,13 @@ function App() {
 }
 
 export default App;
-
 ```
+
 ## Modal
   <p align="center">
       <img src="img/modal.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React, { useState } from 'react'
@@ -147,12 +149,13 @@ function App() {
 }
 
 export default App;
-
 ```
+
 ## Tooltip
   <p align="center">
       <img src="img/Tooltip.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React, { forwardRef } from 'react'
@@ -203,12 +206,13 @@ function App() {
 }
 
 export default App;
-
 ```
+
 ## Count Up
   <p align="center">
       <img src="img/CountUp.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React, { useState, forwardRef } from 'react'
@@ -246,12 +250,13 @@ function App() {
 }
 
 export default App;
-
 ```
+
 ## Idle Timer
   <p align="center">
       <img src="img/IdleTimer.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React from 'react'
@@ -276,7 +281,6 @@ function App() {
 }
 
 export default App;
-
 ```
 
 ```javascript
@@ -334,13 +338,13 @@ function IdleTimerContainer() {
 }
 
 export default IdleTimerContainer
-
 ```
 
 ## Color Picker
   <p align="center">
       <img src="img/ColorPicker.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React, { useState } from 'react'
@@ -379,12 +383,13 @@ function App() {
 }
 
 export default App;
-
 ```
+
 ## Credit Card
   <p align="center">
       <img src="img/Creditcard.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React, { useState } from 'react'
@@ -466,12 +471,13 @@ function App() {
 }
 
 export default App;
-
 ```
+
 ## Date Picker
   <p align="center">
       <img src="img/DatePicker.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React, { useState } from 'react'
@@ -511,12 +517,13 @@ function App() {
 }
 
 export default App;
-
 ```
+
 ## Video Player
   <p align="center">
       <img src="img/VideoPlayer.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React from 'react'
@@ -553,13 +560,13 @@ function App() {
 }
 
 export default App;
-
 ```
 
 ## Spinner
   <p align="center">
       <img src="img/Spinner.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React from 'react'
@@ -610,14 +617,13 @@ function App() {
 }
 
 export default App;
-
 ```
-
 
 ## Charts
   <p align="center">
       <img src="img/Charts.PNG"> 
   </p>
+  
 ``` javascript 
 import './App.css';
 import React from 'react'
