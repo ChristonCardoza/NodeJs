@@ -1,0 +1,11 @@
+type Post1 {
+  id: ID!
+  title: String
+  votes: Int
+}
+
+type Query {
+  posts1: [Post1]
+}
+  
+

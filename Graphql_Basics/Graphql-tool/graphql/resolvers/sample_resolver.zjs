@@ -1,0 +1,9 @@
+const resolvers = {
+  Query: {
+    posts() {
+      return[ {id: 1, title: "DeadMan", author: 'DeadMan', votes: 99}];
+    },
+  }
+};
+
+module.exports = resolvers;
