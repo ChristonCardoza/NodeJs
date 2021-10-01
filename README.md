@@ -49,7 +49,7 @@ NPM - Node Package Manager:
        - Here value 2 get assigned to n
        - When function invoke ie square(n) then new execution context created (local execution context)
 
-## Common Termilogies:
+## Common Terminologies:
  
  1. Annonymus Function:  
  	-  Function without a name, only used when we use it as value
@@ -78,3 +78,24 @@ NPM - Node Package Manager:
  	- Time in which 'let' and 'const' hosted till it get some value
  10. Shadow:
         - Poiting same object in global scope
+ 11. Closure:
+ 	- Function is returned from another function they still maintain the lexical scope
+ 	- Function with it lexical scope bind togather forms the closures
+ 	- cons:
+ 	    i. Here Over consumption of memory take place. ie closure variavle are not garbade collected
+	- pros:
+	    i.   Module design pattern
+	    ii.  Curring
+	    iii. Data Hidding and Encapsulation
+	    iv.  setTimeout -> works fine for let & const but for var always return latest value
+	    v.   Iterator
+  12. Event Loop:
+  	- Callback queue:
+  	    i.   When timmer expires, it will put that function into callback queue
+	    ii.  Event loop scan the callback queue and put that function into the callstack when callstack is empty.
+	    iii. For promise it will look for Microservice queue then go to callback queue
+	- Starvation of Callback Queue:
+	    Eventloop gives more priority to Microtask queue compare to Callback queue. When all the task from Microtask queue will done then it moves the callback queue to Call 
+	    stack. The duration which callback que wait to execution the task is Starvation of Callback Queue
+  13. Higher Order:
+        - Function which takes function as input or return function from itself 
