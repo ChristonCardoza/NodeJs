@@ -89,7 +89,7 @@ NPM - Node Package Manager:
 	    iii. Data Hidding and Encapsulation
 	    iv.  setTimeout -> works fine for let & const but for var always return latest value
 	    v.   Iterator
-  12. Event Loop:
+ 12. Event Loop:
   	- Callback queue:
   	    i.   When timmer expires, it will put that function into callback queue
 	    ii.  Event loop scan the callback queue and put that function into the callstack when callstack is empty.
@@ -97,5 +97,65 @@ NPM - Node Package Manager:
 	- Starvation of Callback Queue:
 	    Eventloop gives more priority to Microtask queue compare to Callback queue. When all the task from Microtask queue will done then it moves the callback queue to Call 
 	    stack. The duration which callback que wait to execution the task is Starvation of Callback Queue
-  13. Higher Order:
+ 13. Higher Order:
         - Function which takes function as input or return function from itself 
+ 14. Function Borrowing:
+  	- Borrow the function from one object and use it with data of another Object
+  	- Ex:
+		```javascript
+
+			 let name1 = {
+				firstname: "Christon",
+				lastname: "Cardoza",
+				printFullname: () => console.log(this.firstname + this.lastname)
+			 }
+			 let name2 = {
+				firstname: "Antony",
+				lastname: "Cardoza"
+			 }
+			 name1.printFullname.call(name2);
+
+		```
+   - First argument will the reference objext Rest all are fuctional arguments
+   - 'apply' similar to the 'call' bur functional argument will passed in array format
+   - Here function execute immediately
+   - 'bind' method same as call but it wont execute the function immediately ( it takes the copy of the method) 
+   - Ex:
+ 	  ```javascript 
+	   let printMyName = name1.printFullName.bind(name2, "Bhai");
+	   printMyName();
+	  ```  
+ 15. PollyFill:
+ 	- Browser fallback to run the function , that time wee nee to write our own function to stumulate that behavior
+ 	- Ex: PollyFill of bind
+ 	  ```javascript 
+	   Function.prototype.myBind = function(...args){
+	     let obj = this;
+	     params = args.slice(1);
+	     return function ( ...args2){
+	     	obj.apply(args[0], [...params, ...args2]);
+	     }
+	   }
+	  ``` 
+ 16. Currying:
+   	- It achivied by 'bind' and 'closure'
+   	- Creating more number of method from single method by pre-setting some argument
+ 	  ```javascript
+	   let multiply = function(x){
+	   return function(y) {
+	     	console.log(y)
+	     } 
+	   }
+	   let multiplyByTwo = multiply(2);
+	   multiplyByTwo(3);
+	  ```
+	  
+   or 
+	
+    ```javascript
+     let multiply = function(x,y){
+     	console.log(x*y);
+     }
+     let multiplyByTwo = multiply.bind(this,2); ---> here 'this' refer multiply function and '2' refer to the value of x
+     multiplyByTwo(5); ---> here '5' refer value of y 
+    ```
