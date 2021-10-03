@@ -57,15 +57,15 @@ NPM - Node Package Manager:
  	- Ability to use function as value , which can be pass to another function or return from another function
  3. Functional Statement: 
  	```javascript
-	 fucntion square(n) { reurn n2 }
+	 fucntion square(n) { return n2 }
 	```
  4. Functional Expression: 
  	```javascript
-	 const square = function(n) { reurn n2 }
+	 const square = function(n) { return n2 }
 	```
  5. Parameter & Arguement: 
  	```javascript
-	 const square = function(n) { reurn n2 } --> n is paramere
+	 const square = function(n) { return n2 } --> n is paramere
 	 square(2)  ---> 2 is arguement
 	```
  6. Hoisting:
@@ -149,7 +149,6 @@ NPM - Node Package Manager:
 	   let multiplyByTwo = multiply(2);
 	   multiplyByTwo(3);
 	  ```
-	  
    or 
 	
     ```javascript
@@ -159,3 +158,91 @@ NPM - Node Package Manager:
      let multiplyByTwo = multiply.bind(this,2); ---> here 'this' refer multiply function and '2' refer to the value of x
      multiplyByTwo(5); ---> here '5' refer value of y 
     ```
+17. Event Bubling & Captturing:
+	- If we clicked on child then `onClickChild()`  called first then it moves to up to the heirarchy till DOM ends, this is Event Bubling
+	- If we clicked on child then `onClickGrandParent()` called first then it move to downwards line top parent then child, this is Event Capture(Event Trickling)
+	- By default bubling s attacked to `eventHandler`
+	 ```javascript
+	   .addEventHandler('click', ()=> {}, useCapture);
+	 ```
+	 - Capturing comes first then goes to Bubling
+	 ```javascript
+	   document.querySelctor('#grandParent').addEventListener('click',()=>{}, true);
+	 ```
+ 18. Event Delegation:
+   	- Insted of attaching event listner to individual child element individually, rather add it to its parents.
+	 ```html
+	  <div>
+	    <ul id="category">
+	      <li id="laptop"> Laptop</li>
+	      <li id="camera"> Camera</li>
+	      <li id="shoe"> Shoe</li>
+	    </ul>
+	  </div>
+	 ```
+	 
+	  ```javascript
+	   document.querySelctor('#category').addEventListener('click',(e)=>{console.log(e.target)});
+	 ```
+19. Debouncing and Throttling:
+   	- Debouncing
+	  ```javascript
+	   let counter = 0;
+	   
+	   const gerData = () => console.log("Fetch Data:", counter ++);
+	   
+	   const doSomeMagic = function(fn, delay){
+	     let timer;
+	     return function(){
+	      let context = this;
+	      let args = arguments;
+	      claerTimeout(timer)
+	      timer = setTimeout(() => {
+	       fn.apply(context, args)
+	      }, delay);
+	     }
+	   }
+	   
+	   const betterFunction = doSomeMagic(getData,300);
+	 ```
+   - Throttling: limiting the call
+   	
+	  ```javascript
+	   let counter = 0;
+	   
+	   const gerData = () => console.log("Fetch Data:", counter ++);
+	   
+	   const throttle = function(fn, limit){
+	     let flag=true;
+	     return function(){
+	      let context = this;
+	      let args = arguments;
+	      if(flag){
+	       fun.apply(xontext, args);
+	       flag = false;
+	       setTimeout(()=> {
+		flag=true;
+	       },limit);
+	      }
+	     }
+	    }
+	   
+	   const betterFunction = throttle(getData, 5);
+	 ```
+20. Local Storage and Session Storage:
+	- cookies : 400 bytes
+	- session : 5MB
+	- local : Usually more than 5 MB
+	 ```javascript
+	   localStorage.setItem("Hello", "World");
+	   locatStorage.getitem("Hello");
+	   localStorage.removeItem("Hello");
+	   localstorage.clear();
+	 ```
+
+## Assyn & Defer in HTML
+ - When webpage loads parsing of HTML and loading & execution of scripts occurs
+ - When only script tag `<script src= "" /`: HTML parsing starts, after some tine it encoutnter the script tag. As soon as it see the script tag it will stop the parsing & fetch the script from network and execute itm then xontionue the HTML parsing
+ - When it use async in script tag `<script async src="" />` : As soon as it encounter  script tag parsing wont stop, parallely  download the scripts. Then it pause the parsing execute the script. Once script execution over it continue parsing. It doesn't gaurantee that script execution are in order.
+ - When it has defer in script `<script defer src="" />`: As soon as it encounter script it won't stop the parsing, parallelly download the script. It will wait for all the parsing of HTML done. Onece complete HTML is parsed, script will getting executed. It does gaurantee that script executon are in order.
+    
